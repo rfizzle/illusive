@@ -1,7 +1,6 @@
 package examples
 
 import (
-	"encoding/json"
 	"fmt"
 	"github.com/rfizzle/illusive"
 	"log"
@@ -22,11 +21,6 @@ func main() {
 
 	results, err := client.ForensicsIncidentSummary("1")
 	summary := make([]string, 0)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	_, err = json.Marshal(results)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -24,11 +24,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	_, err = json.Marshal(results)
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	for _, item := range results {
 		switch fmt.Sprintf("%s_%s", item.Source, item.Type) {
 		case "MANAGEMENT_EVENT":
