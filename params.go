@@ -32,7 +32,13 @@ func incidentDetailsParams() []string {
 	}
 }
 
-func incidentEventParams() []string {
+func forensicsIncidentSummary() []string {
+	return []string{
+		"incident_id",
+	}
+}
+
+func forensicsTimelineParams() []string {
 	return []string{
 		"incident_id",
 		"start_date",

@@ -5,7 +5,16 @@ import (
 	"crypto/x509"
 	"fmt"
 	"io/ioutil"
+	"time"
 )
+
+// Add root ca to current request store
+func ClientTimeout(seconds int) func(c *Client) error {
+	return func(c *Client) error {
+		c.c.Timeout = time.Duration(seconds) * time.Second
+		return nil
+	}
+}
 
 // Disable TLS validation for endpoints without valid SSL certificates
 func ClientDisableTLSValidation(c *Client) error {

@@ -3,7 +3,7 @@ package illusive
 import "encoding/json"
 
 // IncidentDetails returns the details of an incident
-func (c *Client) IncidentDetails(incidentID string, parameters ...RequestParameter) (interface{}, error) {
+func (c *Client) Incident(incidentID string, parameters ...RequestParameter) (*IncidentDetails, error) {
 	// Setup params
 	validParams := incidentDetailsParams()
 	parameters = append(parameters, Param("incident_id", incidentID))
@@ -30,7 +30,7 @@ func (c *Client) IncidentDetails(incidentID string, parameters ...RequestParamet
 	}
 
 	// Unmarshal json body into structs and return
-	var details interface{}
+	var details IncidentDetails
 	err = json.Unmarshal(responseData, &details)
-	return details, err
+	return &details, err
 }

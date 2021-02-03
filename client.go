@@ -38,7 +38,7 @@ func NewClient(basePath, token string, options ...OptionClient) (*Client, error)
 		t:       t,
 		token:   token,
 		makeAuth: func(req *http.Request, params *url.Values) error {
-			req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", token))
+			req.Header.Set("Authorization", token)
 			return nil
 		},
 	}
