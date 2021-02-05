@@ -57,9 +57,13 @@ type TimelineDetailsManagementEvent struct {
 	ID                   int      `json:"id"`
 	Date                 string   `json:"date"`
 	Type                 string   `json:"type"`
+	SourceHost           string   `json:"sourceHost"`
 	SourceIP             string   `json:"sourceIP"`
+	LoggedInUser         string   `json:"loggedInUser,omitempty"`
 	Trap                 string   `json:"trap"`
 	DestinationIPAddress string   `json:"destinationIpAddress"`
+	InjectedUserName     string   `json:"injectedUserName,omitempty"`
+	InjectedPassword     string   `json:"injectedPassword,omitempty"`
 	ServiceType          string   `json:"serviceType"`
 	Data                 []string `json:"data,omitempty"`
 	HasForensics         string   `json:"hasForensics"`
