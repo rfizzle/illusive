@@ -31,7 +31,6 @@ Import the library into your project, setup the client, and call the API with va
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"github.com/rfizzle/illusive"
 	"log"
